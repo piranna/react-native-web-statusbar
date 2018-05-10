@@ -1,0 +1,31 @@
+{
+  "name": "react-native-web-statusbar",
+  "version": "0.0.0",
+  "description": "React Native `StatusBar` component for `react-native-web`",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piranna/react-native-web-statusbar.git"
+  },
+  "keywords": [
+    "React",
+    "Native",
+    "react-native-web",
+    "StatusBar",
+    "drop-in"
+  ],
+  "author": "Jesús Leganés-Combarro 'piranna' <piranna@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piranna/react-native-web-statusbar/issues"
+  },
+  "homepage": "https://github.com/piranna/react-native-web-statusbar#readme",
+  "peerDependencies": {
+    "fbjs": "^0.8.16",
+    "react": "^16.3.2",
+    "react-native-web": "^0.6.1"
+  }
+}
