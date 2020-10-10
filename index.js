@@ -110,10 +110,10 @@ export default class StatusBar extends Component<Props> {
 
     if (backgroundColor) StatusBar.setBackgroundColor(backgroundColor, animated);
     if (barStyle) StatusBar.setBarStyle(barStyle, animated);
-    if (hidden) StatusBar.setHidden(hidden, showHideTransition);
-    if (networkActivityIndicatorVisible)
+    if (hidden !== undefined) StatusBar.setHidden(hidden, showHideTransition);
+    if (networkActivityIndicatorVisible !== undefined)
       StatusBar.setNetworkActivityIndicatorVisible(networkActivityIndicatorVisible);
-    if (translucent) StatusBar.setTranslucent(translucent);
+    if (translucent !== undefined) StatusBar.setTranslucent(translucent);
 
     return null;
   }
