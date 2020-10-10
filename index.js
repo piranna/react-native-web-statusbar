@@ -25,6 +25,8 @@ type StatusBarStyle = 'default' | 'light-content' | 'dark-content';
 
 const { head } = document;
 
+const _stack = [];
+
 let _barStyle = 'default';
 let _hidden = false;
 let _translucent = false;
@@ -90,6 +92,26 @@ export default class StatusBar extends Component<Props> {
     const { availHeight, height } = window.screen;
 
     return height - availHeight;
+  }
+
+  static popStackEntry(entry: any) {
+    _stack.splice(entry, 1);
+
+    _stack.forEach(setStatusBar);
+  }
+
+  static pushStackEntry(props: any) {
+    const length = _stack.push(props);
+
+    _stack.forEach(setStatusBar);
+
+    return length - 1;
+  }
+
+  static replaceStackEntry(entry: any, props: any) {
+    _stack.splice(entry, 1, props);
+
+    _stack.forEach(setStatusBar);
   }
 
   static setBackgroundColor(color: string, animated?: boolean) {
