@@ -41,7 +41,7 @@ function setMetaTag(attrName, content) {
     head.appendChild(tag);
   }
 
-  if (tag instanceof HTMLMetaElement) tag.content = content;
+  tag.content = content;
 }
 
 function setAppleMobileWebAppCapable() {
