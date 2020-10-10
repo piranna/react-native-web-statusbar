@@ -60,6 +60,25 @@ function setAppleMobileWebAppStatusBarStyle() {
   );
 }
 
+function setStatusBar(
+  {
+    animated,
+    backgroundColor,
+    barStyle,
+    hidden,
+    networkActivityIndicatorVisible,
+    showHideTransition,
+    translucent
+  }
+) {
+  if (backgroundColor) StatusBar.setBackgroundColor(backgroundColor, animated);
+  if (barStyle) StatusBar.setBarStyle(barStyle, animated);
+  if (hidden !== undefined) StatusBar.setHidden(hidden, showHideTransition);
+  if (networkActivityIndicatorVisible !== undefined)
+    StatusBar.setNetworkActivityIndicatorVisible(networkActivityIndicatorVisible);
+  if (translucent !== undefined) StatusBar.setTranslucent(translucent);
+}
+
 export default class StatusBar extends Component<Props> {
   static defaultProps = {
     showHideTransition: 'fade'
@@ -98,22 +117,7 @@ export default class StatusBar extends Component<Props> {
   }
 
   render() {
-    const {
-      animated,
-      backgroundColor,
-      barStyle,
-      hidden,
-      networkActivityIndicatorVisible,
-      showHideTransition,
-      translucent
-    } = this.props;
-
-    if (backgroundColor) StatusBar.setBackgroundColor(backgroundColor, animated);
-    if (barStyle) StatusBar.setBarStyle(barStyle, animated);
-    if (hidden !== undefined) StatusBar.setHidden(hidden, showHideTransition);
-    if (networkActivityIndicatorVisible !== undefined)
-      StatusBar.setNetworkActivityIndicatorVisible(networkActivityIndicatorVisible);
-    if (translucent !== undefined) StatusBar.setTranslucent(translucent);
+    setStatusBar(this.props);
 
     return null;
   }
